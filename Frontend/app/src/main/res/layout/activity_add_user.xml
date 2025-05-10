@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".manage.AddUserActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:drawerLayoutCornerSize="0dp"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+        <View
+            android:id="@+id/divider"
+            android:layout_width="409dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="5dp"
+            android:background="?android:attr/listDivider"
+            android:divider="#000000"
+            android:dividerHeight="2dip"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/header" />
+
+        <TextView
+            android:id="@+id/newUserText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Create A New User"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@id/divider" />
+
+        <TextView
+            android:id="@+id/reqFieldText"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Required fields are denoted by an asterisk (*)"
+            android:textColor="#828282"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="@+id/newUserText"
+            app:layout_constraintTop_toBottomOf="@+id/newUserText"/>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/firstNameTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:layout_marginTop="5dp"
+            android:hint="First Name *"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintStart_toStartOf="@id/passwordTextLayout"
+            app:layout_constraintTop_toBottomOf="@+id/reqFieldText">
+
+            <EditText
+                android:id="@+id/firstNameTextInput"
+                android:layout_width="160dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/lastNameTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="160dp"
+            android:layout_height="60dp"
+            android:hint="Last Name *"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="@id/passwordTextLayout"
+            app:layout_constraintTop_toTopOf="@+id/firstNameTextLayout">
+
+        <EditText
+            android:id="@+id/lastNameTextInput"
+            android:layout_width="160dp"
+            android:layout_height="50dp"
+            android:ems="10"
+            android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/passwordTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:hint="Initial Password *"
+            android:imeOptions="actionDone"
+            app:passwordToggleEnabled="true"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/lastNameTextLayout">
+
+            <EditText
+                android:id="@+id/passwordTextInput"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="textPassword" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/emailTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:hint="Email *"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/passwordTextLayout">
+
+            <EditText
+                android:id="@+id/emailTextInput"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:inputType="textEmailAddress" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/numberTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:hint="Phone Number (000-000-0000) *"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/emailTextLayout">
+
+            <EditText
+                android:id="@+id/numberTextInput"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:ems="10"
+                android:maxLength="12"
+                android:digits="0123456789"
+                android:inputType= "phone"/>
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/privilegeTypeLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:hint="Select A Privilege Level *"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/numberTextLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/privilegeTypeInput"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:textSize="16sp"
+                android:inputType="none"
+                android:maxLines="1"
+                android:ems="10" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/buildingTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:hint="Building"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/privilegeTypeLayout">
+
+            <AutoCompleteTextView
+                android:id="@+id/buildingInput"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:paddingStart="15dp"
+                android:paddingEnd="15dp"
+                android:textSize="16sp"
+                android:maxLines="1"
+                android:ems="10"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/birthdayTextLayout"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="350dp"
+            android:layout_height="60dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:layout_marginTop="8dp"
+            android:hint="Birthday (MM-DD-YYYY)"
+            android:imeOptions="actionDone"
+            app:errorEnabled="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/buildingTextLayout">
+
+            <EditText
+                android:id="@+id/birthdayTextInput"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:maxLength="10"
+                android:digits="0123456789"
+                android:ems="10"
+                android:inputType="date" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <TextView
+            android:id="@+id/errText"
+            android:layout_width="350dp"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:textSize="14dp"
+            android:textColor="#FF0000"
+            android:visibility="invisible"
+            app:layout_constraintStart_toStartOf="@id/cancelBtn"
+            app:layout_constraintBottom_toTopOf="@id/cancelBtn" />
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="Cancel"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="@id/firstNameTextLayout"/>
+
+        <Button
+            android:id="@+id/saveBtn"
+            android:layout_width="125dp"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_marginBottom="30dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/lastNameTextLayout"/>
+
+        <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyle"
+            android:layout_width="75dp"
+            android:layout_height="75dp"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

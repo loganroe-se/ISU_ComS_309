@@ -1,0 +1,39 @@
+# .gitignore written by asand for COM S 309 Android Projects
+# adapted from stackoverflow.com/questions/16736856/what-should-be-in-%20my-gitignore-for-an-android-studio-project
+
+# Android Studio Supplemental Files
+*.iml
+.idea
+.gradle
+build/
+.navigation
+captures/
+output.json 
+
+# Built Application Files
+*.apk
+*.ap_
+*.aab
+
+# Files for the Dex VM
+*.dex
+
+# Generated Files
+bin/
+gen/
+
+# Java Class Files
+*.class
+
+# Local Configuration File (sdk path, etc.)
+local.properties
+
+# NDK Files
+obj/
+.externalNativeBuild
+
+# OSX Files
+.DS_Store
+
+# Windows Thumbnail db
+Thumbs.db

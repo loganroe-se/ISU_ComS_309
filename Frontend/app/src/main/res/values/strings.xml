@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">CyStaff_Frontend</string>
+    <string name="home_name">Home Page</string>
+    <string name="announcements_name">Announcements</string>
+    <string name="calendar_name">Calendar</string>
+    <string name="event_name">Create Events</string>
+    <string name="time_name">Time Tracking</string>
+    <string name="directory_name">Employee Directory</string>
+    <string name="manage_name">Manage Users</string>
+    <string name="add_user_name">Add Users</string>
+    <string name="edit_user_name">Edit Users</string>
+    <string name="message_name">Messages</string>
+    <string name="checking_name">Submit Time</string>
+    <string name="settings_name">Settings</string>
+    <string name="select">Select Item</string>
+    <string name="open_nav_drawer">Open navigation drawer</string>
+    <string name="close_nav_drawer">Close navigation drawer</string>
+    <string name="create_announcement_name">Create New Announcement</string>
+    <string-array name="calendarFormat">
+        <item>Week</item>
+        <item>Month</item>
+    </string-array>
+    <string-array name="eventType">
+        <item>Reminder</item>
+        <item>Meeting</item>
+    </string-array>
+    <string-array name="locationType">
+        <item>Online</item>
+        <item>In-Person</item>
+    </string-array>
+    <string-array name="sortBy">
+        <item>A to Z</item>
+        <item>Z to A</item>
+    </string-array>
+    <string name="leftButton"><![CDATA[<]]></string>
+    <string name="rightButton"><![CDATA[>]]></string>
+</resources>

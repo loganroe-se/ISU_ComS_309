@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MessagingActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:drawerLayoutCornerSize="0dp"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/messageDrawer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="75dp"
+            app:layout_constraintTop_toBottomOf="parent">
+
+            <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_messageView"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:drawerLayoutCornerSize="0dp"
+                app:headerLayout="@layout/nav_message_header"
+                app:menu="@menu/message_menu" />
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/messageHeader"
+                    layout="@layout/message_header"/>
+
+                <TextView
+                    android:id="@+id/helpText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    android:padding="20dp"
+                    android:text="In order to start messaging someone, go to the navigation bar to the left of 'Name'. \nUsers can also be added to this list using the add button in the navigation bar."
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/messageTextInputLayout"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginBottom="10dp"
+                    android:hint="Message"
+                    android:imeOptions="actionDone"
+                    android:visibility="invisible"
+                    android:layout_marginStart="20dp"
+                    android:layout_marginEnd="20dp"
+                    app:endIconDrawable="@drawable/baseline_send_24"
+                    app:endIconMode="custom"
+                    app:boxStrokeErrorColor="#0492C2"
+                    app:errorEnabled="true"
+                    app:errorIconDrawable="@null"
+                    app:errorTextColor="#1338BE"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.475"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintVertical_bias="1">
+
+                    <EditText
+                        android:id="@+id/messageTextInput"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:ems="10"
+                        android:inputType="text" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/messageRecyclerView"
+                    android:layout_width="match_parent"
+                    android:layout_height="510dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginStart="15dp"
+                    android:layout_marginEnd="15dp"
+                    android:visibility="invisible"
+                    app:reverseLayout="true"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/messageTextInputLayout" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.drawerlayout.widget.DrawerLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

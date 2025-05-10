@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/calendarCell"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <TextView
+        android:id="@+id/cellDayText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1"
+        android:textSize="12sp"
+        android:textColor="@color/black"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintVertical_bias="0.25"/>
+
+    <TextView
+        android:id="@+id/eventBannerOne"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Title\ntitle"
+        android:textSize="8sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:background="@drawable/square_shape"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:backgroundTint="@color/lightBlue"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/cellDayText"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/eventBannerTwo"
+        android:layout_width="match_parent"
+        android:layout_height="20dp"
+        android:text="Title\ntitle"
+        android:textSize="8sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:background="@drawable/square_shape"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="1dp"
+        android:backgroundTint="@color/lightBlue"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/eventBannerOne"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <TextView
+        android:id="@+id/extraEvents"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="+1"
+        android:textSize="8sp"
+        android:paddingStart="5dp"
+        android:paddingEnd="5dp"
+        android:layout_marginStart="2dp"
+        android:layout_marginEnd="2dp"
+        android:layout_marginTop="1dp"
+        android:visibility="invisible"
+        app:layout_constraintTop_toBottomOf="@id/eventBannerTwo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

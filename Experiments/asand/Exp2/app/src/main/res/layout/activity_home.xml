@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0dbf0d"
+    tools:context=".HomeActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Experiment #2 : Buttons and Toasts"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentTop="true" />
+
+    <Button
+        android:id="@+id/buttonMessage"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:layout_marginTop="339dp"
+        android:backgroundTint="#ffcc00"
+        android:text="Page Information"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/buttonNext"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/buttonMessage"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="50dp"
+        android:backgroundTint="#ffcc00"
+        android:text="Next Screen"
+        android:textColor="@color/black" />
+
+    <Button
+        android:id="@+id/buttonBack"
+        android:layout_width="130dp"
+        android:layout_height="50dp"
+        android:layout_below="@+id/buttonMessage"
+        android:layout_alignParentLeft="true"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="50dp"
+        android:backgroundTint="#ffcc00"
+        android:text="Prior Screen"
+        android:textColor="@color/black" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="113dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="87dp"
+        android:progress="50"
+        android:progressBackgroundTint="@color/white" />
+</RelativeLayout>

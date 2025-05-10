@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <group android:checkableBehavior="single">
+
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/nav_home"
+            android:title="Home" />
+        <item
+            android:id="@+id/nav_calendar"
+            android:icon="@drawable/nav_calendar"
+            android:title="Calendar" />
+        <item
+            android:id="@+id/nav_announcements"
+            android:icon="@drawable/nav_announcements"
+            android:title="Announcements" />
+        <item
+            android:id="@+id/nav_create_announcement"
+            android:icon="@drawable/nav_announcements"
+            android:title="Create Announcement"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_directory"
+            android:icon="@drawable/nav_directory"
+            android:title="Directory" />
+        <item
+            android:id="@+id/nav_time"
+            android:icon="@drawable/nav_time"
+            android:title="Time Tracking" />
+        <item
+            android:id="@+id/nav_manage"
+            android:icon="@drawable/nav_manage"
+            android:title="Manage Users"
+            android:visible="false" />
+        <item
+            android:id="@+id/nav_message"
+            android:icon="@drawable/nav_message"
+            android:title="Messages"/>
+    </group>
+    <group
+        android:id="@+id/settings_grp"
+        android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_settings"
+            android:icon="@drawable/nav_settings"
+            android:title="Settings" />
+    </group>
+</menu>

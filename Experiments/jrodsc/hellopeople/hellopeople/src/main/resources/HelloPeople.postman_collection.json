@@ -1,0 +1,105 @@
+{
+	"info": {
+		"_postman_id": "bdcbdbdc-9686-47a8-a5d4-b653b013f721",
+		"name": "HelloPeople",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "29569543"
+	},
+	"item": [
+		{
+			"name": "People",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "http://localhost:8080/people",
+				"description": "Get all the people in the list"
+			},
+			"response": []
+		},
+		{
+			"name": "CreatePerson",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"firstName\" : \"Jose\",\r\n    \"lastName\"  : \"Castro\",\r\n    \"address\"   : \"Fredi\",\r\n    \"telephone\" : \"1234567890\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": "http://localhost:8080/people"
+			},
+			"response": []
+		},
+		{
+			"name": "FindPerson",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeName",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "ChangeAddress",
+			"request": {
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/people/{firstName}?address=Helser",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people",
+						"{firstName}"
+					],
+					"query": [
+						{
+							"key": "address",
+							"value": "Helser"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "PeopleByLastname",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/people?Castro",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"people"
+					],
+					"query": [
+						{
+							"key": "Castro",
+							"value": null
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

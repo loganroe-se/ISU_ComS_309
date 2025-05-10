@@ -1,0 +1,153 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.drawerlayout.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/drawer"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CalendarActivity">
+
+    <com.google.android.material.navigation.NavigationView
+        android:id="@+id/nav_view"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:drawerLayoutCornerSize="0dp"
+        app:headerLayout="@layout/nav_header"
+        app:menu="@menu/main_menu" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/header"
+            layout="@layout/header" />
+
+        <Button
+            android:id="@+id/newEventBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="New Event"
+            android:textColor="@color/black"
+            android:backgroundTint="@color/white"
+            android:layout_marginStart="20dp"
+            app:layout_constraintTop_toTopOf="@id/calendarViewSelection"
+            app:layout_constraintStart_toStartOf="parent"
+            style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+        <com.google.android.material.button.MaterialButtonToggleGroup
+            android:id="@+id/calendarViewSelection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="20dp"
+            app:singleSelection="true"
+            app:selectionRequired="true"
+            app:checkedButton="@id/monthSelection"
+            app:layout_constraintTop_toBottomOf="@id/header"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginTop="8dp">
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/weekSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Week"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/monthSelection"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Month"
+                android:textColor="@color/black"
+                app:backgroundTint="@color/white"
+                style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+        </com.google.android.material.button.MaterialButtonToggleGroup>
+        
+        <ScrollView
+            android:id="@+id/calendarScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="10dp"
+            android:fillViewport="true"
+            app:layout_constraintTop_toBottomOf="@id/calendarViewSelection"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/scrollViewConstraintLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.example.cystaff_frontend.calendar.CalendarMonthView
+                    android:id="@+id/mainCalendarMonthView"
+                    android:layout_width="match_parent"
+                    android:layout_height="520dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toTopOf="@id/scrollViewConstraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:id="@+id/nestedConstraintLayout"
+                    android:layout_width="match_parent"
+                    android:layout_height="175dp"
+                    app:layout_constraintTop_toTopOf="@id/scrollViewConstraintLayout"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent">
+                    <com.example.cystaff_frontend.calendar.CalendarWeekView
+                        android:id="@+id/mainCalendarWeekView"
+                        android:layout_width="match_parent"
+                        android:layout_height="520dp"
+                        android:layout_marginStart="10dp"
+                        android:layout_marginEnd="10dp"
+                        android:visibility="gone"
+                        app:layout_constraintTop_toTopOf="@id/nestedConstraintLayout"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:id="@+id/calendarBarrier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="bottom"
+                    app:constraint_referenced_ids="mainCalendarMonthView, nestedConstraintLayout"/>
+
+                <TextView
+                    android:id="@+id/eventDisplayText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:layout_marginTop="10dp"
+                    android:text="Events for MONTH DAY, YEAR"
+                    android:textSize="16sp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/calendarBarrier"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/eventDisplayRecycler"
+                    android:layout_width="match_parent"
+                    android:layout_height="0dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginEnd="10dp"
+                    android:visibility="gone"
+                    app:layout_constraintTop_toBottomOf="@id/eventDisplayText"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </ScrollView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.drawerlayout.widget.DrawerLayout>

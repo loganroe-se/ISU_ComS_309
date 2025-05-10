@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/settingsExpandedListItem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Calendar Format"
+        android:textSize="12sp"
+        android:paddingStart="?android:attr/expandableListPreferredItemPaddingLeft"
+        android:gravity="start"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@id/barrierTop"
+        app:layout_constraintBottom_toBottomOf="@id/barrierBottom"
+        app:layout_constraintEnd_toStartOf="@id/barrierStart"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierTop"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="top"
+        app:constraint_referenced_ids="optionSelect, intEntry, textEntry, changePasswordBtn, phoneNumberEntry"/>
+
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierBottom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="bottom"
+        app:constraint_referenced_ids="optionSelect, intEntry, textEntry, changePasswordBtn, phoneNumberEntry"/>
+    
+    <androidx.constraintlayout.widget.Barrier
+        android:id="@+id/barrierStart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:barrierDirection="start"
+        app:constraint_referenced_ids="optionSelect, intEntry, textEntry, changePasswordBtn, phoneNumberEntry"/>
+
+    <Spinner
+        android:id="@+id/optionSelect"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:spinnerMode="dropdown"
+        android:gravity="end"
+        android:textAlignment="gravity"
+        android:visibility="gone"
+        android:focusable="true"
+        app:layout_constraintTop_toTopOf="@id/settingsExpandedListItem"
+        app:layout_constraintBottom_toBottomOf="@id/settingsExpandedListItem"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <EditText
+        android:id="@+id/intEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="2"
+        android:layout_marginEnd="25dp"
+        android:visibility="gone"
+        android:inputType="number"
+        app:layout_constraintTop_toTopOf="@id/settingsExpandedListItem"
+        app:layout_constraintBottom_toBottomOf="@id/settingsExpandedListItem"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <EditText
+        android:id="@+id/textEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="7"
+        android:layout_marginEnd="25dp"
+        android:visibility="gone"
+        app:layout_constraintTop_toTopOf="@id/settingsExpandedListItem"
+        app:layout_constraintBottom_toBottomOf="@id/settingsExpandedListItem"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <Button
+        android:id="@+id/changePasswordBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="10dp"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:backgroundTint="@color/white"
+        android:text="Change Password"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        app:layout_constrainedHeight="true"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        style="@style/Widget.Material3.Button.OutlinedButton"/>
+
+    <EditText
+        android:id="@+id/phoneNumberEntry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="6"
+        android:hint="000-000-0000"
+        android:layout_marginEnd="25dp"
+        android:visibility="gone"
+        android:autofillHints="phone"
+        android:inputType="phone"
+        android:gravity="center_horizontal"
+        android:textAlignment="gravity"
+        android:maxLength="12"
+        app:layout_constraintTop_toTopOf="@id/settingsExpandedListItem"
+        app:layout_constraintBottom_toBottomOf="@id/settingsExpandedListItem"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

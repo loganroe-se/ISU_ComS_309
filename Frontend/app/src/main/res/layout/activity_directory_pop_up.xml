@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="340dp"
+    android:layout_height="470dp"
+    android:layout_gravity="center"
+    android:background="@drawable/dir_pop">
+
+    <TextView
+        android:id="@+id/closeBtn"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_gravity="end"
+        android:layout_margin="10dp"
+        android:background="@drawable/circle_shape"
+        android:gravity="center"
+        android:text="X"
+        android:textColor="#000000"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/resetBtn"
+        android:layout_width="100dp"
+        android:layout_height="30dp"
+        android:layout_margin="15dp"
+        android:background="@drawable/square_shape"
+        android:backgroundTint="#D3D3D3"
+        android:padding="0dp"
+        android:text="Reset Filters"
+        android:textAlignment="center"
+        android:textColor="#FF42A5F5"
+        android:textSize="16sp"
+        app:backgroundTint="@null"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/applyBtn"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginBottom="4dp"
+        android:backgroundTint="#D3D3D3"
+        android:text="Apply"
+        android:textColor="#000000"
+        android:textSize="20sp"
+        app:cornerRadius="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <View
+        android:id="@+id/popupDivider"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:background="#000000"
+        app:layout_constraintBottom_toTopOf="@id/applyBtn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        tools:layout_editor_absoluteY="416dp" />
+
+    <ExpandableListView
+        android:id="@+id/filterList"
+        android:layout_width="match_parent"
+        android:layout_height="350dp"
+        android:layout_marginTop="60dp"
+        android:childDivider="@android:color/darker_gray"
+        android:divider="@android:color/darker_gray"
+        android:dividerHeight="1dp"
+        android:focusable="false"
+        android:footerDividersEnabled="true"
+        android:indicatorLeft="?android:attr/expandableListPreferredChildIndicatorLeft"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
